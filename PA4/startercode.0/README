@@ -1,0 +1,64 @@
+Name: Yunfan Xue
+USC NetID: yunfanxu
+CS 455 PA4
+FALL 2018
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+Yunfan Xue
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+WordFinder.java 
+    I first input the word and get the subset of this word. I keep the subset by using ArrayList. Then I traverse all the elements in the Arraylist and input each one into the AnagramDictionary to figure out whether it is a valid word in the dictionary. If it is a valid dictionary, it will output a ArrayList which contains the valid word. For every time I input the subset word, I combine the output valid word into one ArrayList, which is "validWord" in WordFinder.java.
+    After I get all the valid word for all subset word, I store the word into the class ScoreTable. For each valid word it will create a ScoreTable object. I store all the ScoreTable into an ArrayList which is "scoreList" in WordFinder.java. Then I sort the ArrayList and output the word and score.
+
+AnagramDictionary.java 
+    This class will contain a HashMap which store all the word that we read in from the dictionary. When we read the word in, it will first transfer to Multiset form, which can contain a String and a frequency array. The HashMap will let the Multiset as key, and an ArrayList as value. The value will contain all the words which have the same Multiset. So each time when we find a word's anagram word, it will find in O(1) time. So for n output, it will find all in O(n) time.
+
+Rack.java 
+    Rack.java use an ArrayList to contain all the subset.
+
+Multiset.java
+    Multiset contains a String of unique letter and an array of each letter's frequency. When initializing the object, it will use a TreeMap to find all the unique letters and it's frequency. Also I choose TreeMap because it will automatically sort the key. So I can get the string with alphebatical order. Because We need to store Multiset in AnagramDictionary, we need equals() method and hashCode() method. equals() is just basically compare the string and the array. Generating hashCode is by using the String.hashCode() add the sum of each letter's frequency.
+
+ScoreTable.java
+    ScoreTable will contain a array that store each letter's score. And a score of a particular word and a string which store the word. Because we store every valid output word into ScoreTable and we want to sort them, it also need a compareTo method. 
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+
+
+
+
+
+
